@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Almeida & Merlin Contabilidade</title>
+    <meta name="description" content="Entre em contato com a Almeida & Merlin Contabilidade e Assessoria Empresarial. Estamos prontos para ajudar com suas necessidades contábeis e fiscais.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .contact-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-blue) 100%);
+            color: var(--text-light);
+            padding: 60px 0;
+            margin-top: 80px;
+        }
+        
+        .contact-header h1 {
+            color: var(--text-light);
+        }
+        
+        .contact-map {
+            height: 400px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .contact-form-section {
+            padding: 60px 0;
+        }
+        
+        .contact-info-section {
+            background-color: var(--light-bg);
+            padding: 60px 0;
+        }
+        
+        .contact-card {
+            background-color: var(--text-light);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-dark);
+            color: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+        
+        .contact-card h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card p {
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        .business-hours {
+            margin-top: 40px;
+        }
+        
+        .business-hours h3 {
+            margin-bottom: 20px;
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-table td {
+            padding: 12px 0;
+        }
+        
+        .hours-table td:last-child {
+            text-align: right;
+        }
+        
+        .success-message {
+            display: none;
+            background-color: #e9f7ef;
+            color: #2ecc71;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo_am.png" alt="Almeida & Merlin Contabilidade">
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="../index.html#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="../index.html#tutorial" class="nav-link">Tutorial NFS-e</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link active">Contato</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Área do Cliente</a></li>
+                </ul>
+                <button class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Header -->
+    <div class="contact-header">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p>Estamos prontos para ajudar com suas necessidades contábeis e fiscais</p>
+        </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Envie sua Mensagem</h2>
+                <p>Preencha o formulário abaixo e nossa equipe entrará em contato o mais breve possível.</p>
+            </div>
+            
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i> Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="row" style="display: flex; flex-wrap: wrap; margin: 0 -15px;">
+                        <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" class="form-control" placeholder="Seu nome">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" class="form-control" placeholder="Seu e-mail">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Seu telefone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Assunto</label>
+                                <input type="text" id="subject" class="form-control" placeholder="Assunto da mensagem">
+                            </div>
+                        </div>
+                        
+                        <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" class="form-control" placeholder="Sua mensagem" rows="8"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Informações de Contato</h2>
+            </div>
+            
+            <div class="row" style="display: flex; flex-wrap: wrap; margin: 0 -15px;">
+                <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Endereço</h3>
+                        <p>Av. Anita Garibaldi 1913, Sala 01<br>Curitiba - PR</p>
+                    </div>
+                </div>
+                
+                <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Telefones</h3>
+                        <p>(41) 99175-1299<br>(41) 3014-5441</p>
+                    </div>
+                </div>
+                
+                <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>E-mails</h3>
+                        <p>almeidamerlincontabilidade@gmail.com<br>marlialmeidacontabilidade@gmail.com<br>henriquemerlincontabilidade@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="business-hours">
+                <h3>Horário de Atendimento</h3>
+                <table class="hours-table">
+                    <tr>
+                        <td>Segunda a Sexta</td>
+                        <td>8h às 18h</td>
+                    </tr>
+                    <tr>
+                        <td>Sábados, Domingos e Feriados</td>
+                        <td>Fechado</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Localização</h2>
+            </div>
+            
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.0976951624756!2d-49.25390508502264!3d-25.464611284681765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Anita%20Garibaldi%2C%201913%20-%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1632150321123!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="../images/logo_am.png" alt="Almeida & Merlin Contabilidade">
+                    </div>
+                    <p>Soluções contábeis personalizadas para o sucesso do seu negócio. Contabilidade, assessoria fiscal e empresarial de excelência.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#sobre">Sobre Nós</a></li>
+                        <li><a href="../index.html#servicos">Serviços</a></li>
+                        <li><a href="../index.html#tutorial">Tutorial NFS-e</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="../index.html#servicos">Contabilidade Empresarial</a></li>
+                        <li><a href="../index.html#servicos">Assessoria Fiscal e Tributária</a></li>
+                        <li><a href="../index.html#servicos">Departamento Pessoal</a></li>
+                        <li><a href="../index.html#servicos">Consultoria Empresarial</a></li>
+                        <li><a href="../index.html#servicos">Abertura e Legalização</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Anita Garibaldi 1913, Sala 01, Curitiba - PR</li>
+                        <li><i class="fas fa-phone-alt"></i> (41) 99175-1299</li>
+                        <li><i class="fas fa-phone-alt"></i> (41) 3014-5441</li>
+                        <li><i class="fas fa-envelope"></i> almeidamerlincontabilidade@gmail.com</li>
+                        <li><i class="fab fa-instagram"></i> @almeidamerlincontabilidade</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Almeida & Merlin Contabilidade e Assessoria Empresarial. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Validação do formulário de contato
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validação básica
+                    let isValid = true;
+                    const name = document.getElementById('name');
+                    const email = document.getElementById('email');
+                    const message = document.getElementById('message');
+                    
+                    if (!name.value.trim()) {
+                        isValid = false;
+                        showError(name, 'Por favor, informe seu nome');
+                    } else {
+                        removeError(name);
+                    }
+                    
+                    if (!email.value.trim()) {
+                        isValid = false;
+                        showError(email, 'Por favor, informe seu e-mail');
+                    } else if (!isValidEmail(email.value)) {
+                        isValid = false;
+                        showError(email, 'Por favor, informe um e-mail válido');
+                    } else {
+                        removeError(email);
+                    }
+                    
+                    if (!message.value.trim()) {
+                        isValid = false;
+                        showError(message, 'Por favor, escreva sua mensagem');
+                    } else {
+                        removeError(message);
+                    }
+                    
+                    if (isValid) {
+                        // Simulação de envio (em um site real, isso seria substituído pelo envio real)
+                        const submitButton = contactForm.querySelector('button[type="submit"]');
+                        const originalText = submitButton.textContent;
+                        
+                        submitButton.disabled = true;
+                        submitButton.textContent = 'Enviando...';
+                        
+                        // Simula um atraso de envio
+                        setTimeout(function() {
+                            contactForm.reset();
+                            submitButton.disabled = false;
+                            submitButton.textContent = originalText;
+                            
+                            // Mostra mensagem de sucesso
+                            successMessage.style.display = 'block';
+                            
+                            // Rola para a mensagem de sucesso
+                            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            
+                            // Remove a mensagem após 5 segundos
+                            setTimeout(() => {
+                                successMessage.style.display = 'none';
+                            }, 5000);
+                        }, 1500);
+                    }
+                });
+            }
+            
+            // Funções auxiliares para validação de formulário
+            function showError(input, message) {
+                const formGroup = input.parentElement;
+                let errorElement = formGroup.querySelector('.error-message');
+                
+                if (!errorElement) {
+                    errorElement = document.createElement('div');
+                    errorElement.className = 'error-message';
+                    formGroup.appendChild(errorElement);
+                }
+                
+                errorElement.textContent = message;
+                input.style.borderColor = '#e74c3c';
+            }
+            
+            function removeError(input) {
+                const formGroup = input.parentElement;
+                const errorElement = formGroup.querySelector('.error-message');
+                
+                if (errorElement) {
+                    errorElement.remove();
+                }
+                
+                input.style.borderColor = '';
+            }
+            
+            function isValidEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial NFS-e | Almeida & Merlin Contabilidade</title>
+    <meta name="description" content="Tutorial completo sobre o novo sistema de NFS-e que será obrigatório a partir de janeiro de 2026. Aprenda como se cadastrar e emitir notas fiscais no novo padrão nacional.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .tutorial-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-blue) 100%);
+            color: var(--text-light);
+            padding: 60px 0;
+            margin-top: 80px;
+        }
+        
+        .tutorial-header h1 {
+            color: var(--text-light);
+        }
+        
+        .tutorial-nav {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+        
+        .tutorial-nav-container {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 15px 0;
+        }
+        
+        .tutorial-nav-item {
+            margin-right: 20px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .tutorial-nav-item:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .tutorial-nav-item:hover:after,
+        .tutorial-nav-item.active:after {
+            width: 100%;
+        }
+        
+        .tutorial-section {
+            padding: 60px 0;
+        }
+        
+        .tutorial-section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+        
+        .tutorial-content {
+            margin-bottom: 40px;
+        }
+        
+        .tutorial-image {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .tutorial-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-box {
+            background-color: var(--text-light);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-box h3 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .note-box {
+            background-color: #e9f7ef;
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .download-box {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .download-box h3 {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .download-box p {
+            margin-bottom: 20px;
+        }
+        
+        .download-btn {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn i {
+            margin-right: 10px;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--text-light);
+            color: var(--primary-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .tutorial-nav-container {
+                padding: 15px;
+            }
+            
+            .tutorial-header {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo.png" alt="Almeida & Merlin Contabilidade">
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="../index.html#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="../index.html#tutorial" class="nav-link active">Tutorial NFS-e</a></li>
+                    <li class="nav-item"><a href="../index.html#contato" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Área do Cliente</a></li>
+                </ul>
+                <button class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tutorial Header -->
+    <div class="tutorial-header">
+        <div class="container">
+            <h1>Tutorial: Emissão de NFS-e no Novo Sistema Nacional</h1>
+            <p>Guia completo para o novo padrão nacional obrigatório a partir de 2026</p>
+        </div>
+    </div>
+
+    <!-- Tutorial Navigation -->
+    <div class="tutorial-nav">
+        <div class="container tutorial-nav-container">
+            <a href="#introducao" class="tutorial-nav-item active">Introdução</a>
+            <a href="#mudancas" class="tutorial-nav-item">O que muda?</a>
+            <a href="#cadastro" class="tutorial-nav-item">Cadastro</a>
+            <a href="#emissor-web" class="tutorial-nav-item">Emissor Web</a>
+            <a href="#app-mobile" class="tutorial-nav-item">App Mobile</a>
+            <a href="#servicos-favoritos" class="tutorial-nav-item">Serviços Favoritos</a>
+            <a href="#faq" class="tutorial-nav-item">Perguntas Frequentes</a>
+        </div>
+    </div>
+
+    <!-- Introdução -->
+    <section id="introducao" class="tutorial-section">
+        <div class="container">
+            <div class="tutorial-content">
+                <h2>Introdução ao Novo Sistema de NFS-e</h2>
+                
+                <div class="tutorial-image">
+                    <img src="../images/logo_nfse.png" alt="Logo NFS-e" style="max-width: 300px;">
+                </div>
+                
+                <p>A partir de janeiro de 2026, a Nota Fiscal de Serviço Eletrônica (NFS-e) em padrão nacional se tornará obrigatória para todos os municípios brasileiros. Esta mudança representa uma das maiores transformações na área fiscal dos últimos anos, visando simplificar o cotidiano das empresas e padronizar a emissão de documentos fiscais em todo o país.</p>
+                
+                <p>Atualmente, cada município pode estabelecer seu próprio modelo de documento fiscal para registro de prestação de serviço, o que gera custos significativos para empresas que atuam em diferentes cidades. Com o novo sistema nacional, haverá uma padronização completa, eliminando a necessidade de adaptação a múltiplos sistemas municipais.</p>
+                
+                <p>Esta mudança é parte fundamental da <strong>Reforma Tributária sobre o consumo</strong>, que visa simplificar o sistema tributário brasileiro. A padronização é essencial para a implementação dos novos tributos IBS (Imposto sobre Bens e Serviços) e CBS (Contribuição sobre Bens e Serviços), que substituirão diversos impostos atuais.</p>
+                
+                <div class="note-box" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
+                    <h4><i class="fas fa-exclamation-triangle" style="color: #ffc107;"></i> Situação Atual dos Municípios</h4>
+                    <p>Até setembro de 2025, mais de <strong>2.400 municípios</strong> já aderiram ao convênio da NFS-e Nacional, de um total de 5.570 municípios brasileiros. Os municípios que não aderirem até 1º de janeiro de 2026 podem ter as transferências voluntárias da União suspensas.</p>
+                </div>
+                
+                <p>Os municípios devem formalizar convênios com a Receita Federal para aderir ao sistema e evitar a suspensão de transferências voluntárias da União prevista no § 7º do art. 62 da Lei Complementar nº 214, de 2024.</p>
+                
+                <div class="note-box">
+                    <h4><i class="fas fa-info-circle"></i> Importante</h4>
+                    <p>A obrigatoriedade da NFS-e padrão nacional entra em vigor a partir de 1º de janeiro de 2026. Recomendamos que empresas e municípios iniciem a adaptação com antecedência para evitar problemas de última hora.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que muda? -->
+    <section id="mudancas" class="tutorial-section">
+        <div class="container">
+            <div class="tutorial-content">
+                <h2>O que muda com o novo sistema?</h2>
+                
+                <div class="row" style="display: flex; flex-wrap: wrap; margin: 0 -15px;">
+                    <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                        <div class="step-box">
+                            <h3><i class="fas fa-globe" style="color: var(--primary-gold); margin-right: 15px;"></i> Padronização Nacional</h3>
+                            <p>Fim dos diferentes modelos municipais. Todas as empresas utilizarão o mesmo formato de NFS-e em todo o Brasil, eliminando a necessidade de adaptação a múltiplos sistemas e formatos.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h3><i class="fas fa-calendar-check" style="color: var(--primary-gold); margin-right: 15px;"></i> Obrigatoriedade</h3>
+                            <p>A partir de janeiro de 2026, todos os municípios deverão aderir ao sistema nacional de NFS-e. Os municípios devem formalizar convênios com a Receita Federal para evitar a suspensão de transferências voluntárias da União.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h3><i class="fas fa-coins" style="color: var(--primary-gold); margin-right: 15px;"></i> Redução de Custos</h3>
+                            <p>Menor custo operacional para empresas que atuam em diferentes municípios, eliminando a necessidade de adaptação a múltiplos sistemas, treinamentos específicos e processos diferenciados.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                        <div class="step-box">
+                            <h3><i class="fas fa-file-alt" style="color: var(--primary-gold); margin-right: 15px;"></i> Novos Campos e Códigos NBS</h3>
+                            <p>O novo layout da NFS-e incluirá campos ampliados para informações detalhadas sobre tributos como IBS (Imposto sobre Bens e Serviços), CBS (Contribuição sobre Bens e Serviços) e demais tributos da Reforma Tributária.</p>
+                            <p><strong>Códigos NBS Obrigatórios:</strong> A partir de 2026, todo serviço prestado deverá ser identificado por um código NBS (Nomenclatura Brasileira de Serviços) válido, substituindo os códigos locais usados no ISS. Isso significa que as empresas precisarão mapear todos os seus serviços para os códigos NBS correspondentes.</p>
+                            <div class="note-box" style="background-color: #e3f2fd; border-left: 4px solid #2196f3;">
+                                <p><strong>Importante:</strong> Empresas devem iniciar o mapeamento de seus serviços para códigos NBS com antecedência, pois este será um campo obrigatório no novo sistema.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h3><i class="fas fa-tasks" style="color: var(--primary-gold); margin-right: 15px;"></i> Simplificação</h3>
+                            <p>A padronização e a centralização da emissão de NFS-e prometem simplificar o processo de emissão, tornando-o mais eficiente e menos burocrático para empresas e prestadores de serviços.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h3><i class="fas fa-chart-line" style="color: var(--primary-gold); margin-right: 15px;"></i> Benefícios para Municípios</h3>
+                            <p>Além da redução de custos para as empresas, a adesão ao padrão nacional da NFS-e oferece vantagens para o município, como ferramentas para gestão eficiente das receitas municipais e acompanhamento das atividades econômicas locais, com maior transparência e controle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cadastro -->
+    <section id="cadastro" class="tutorial-section">
+        <div class="container">
+            <div class="tutorial-content">
+                <h2>Como se cadastrar no Portal Nacional de Emissão de NFS-e</h2>
+                
+                <div class="tutorial-image">
+                    <img src="../images/tela_login_nfse.png" alt="Tela de Login do Emissor Nacional NFS-e" style="max-width: 600px;">
+                </div>
+                
+                <p>Para utilizar o Portal Nacional de Emissão de Nota Fiscal de Serviços Eletrônica (Emissor Web) e o aplicativo (APP), o primeiro passo é o cadastramento. É pré-requisito fazer o cadastramento no Emissor Web antes de usar o APP.</p>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">1</span> Acessar o Portal</h3>
+                    <p>Navegue até <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank">https://www.nfse.gov.br/EmissorNacional</a>.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">2</span> Primeiro Acesso</h3>
+                    <p>Clique em "Fazer Primeiro Acesso" na tela inicial do portal.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">3</span> Preencher Dados</h3>
+                    <p>Preencha os dados solicitados (CPF/CNPJ, etc.) e clique em "Avançar".</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">4</span> Informações Adicionais</h3>
+                    <p>Dependendo do seu caso, você precisará fornecer informações adicionais:</p>
+                    <ul>
+                        <li><strong>Para quem não declarou Imposto de Renda como Pessoa Física nos últimos dois anos:</strong> Preencha com o número do Título de Eleitor.</li>
+                        <li><strong>Para quem declarou Imposto de Renda como Pessoa Física nos últimos dois anos:</strong> Preencha com o número dos dois últimos recibos da Declaração Anual do Imposto de Renda.</li>
+                    </ul>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">5</span> E-mail e Senha</h3>
+                    <p>Preencha com um e-mail válido e defina sua senha de acesso, seguindo as regras de segurança.</p>
+                    <div class="note-box">
+                        <p><strong>Atenção:</strong> O e-mail cadastrado receberá um código numérico para validação da conta. Certifique-se de informar um e-mail válido e ao qual você tenha acesso.</p>
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">6</span> Validação</h3>
+                    <p>Insira o código numérico recebido por e-mail para validar sua conta.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">7</span> Configurações Iniciais</h3>
+                    <p>Após o cadastro, acesse novamente o portal com seu login e senha. No primeiro acesso, será necessário configurar o sistema:</p>
+                    <ul>
+                        <li>Acesse as configurações (clicando em qualquer um dos símbolos indicados no portal).</li>
+                        <li>Preencha os campos de e-mail e telefone que serão utilizados na geração da NFS-e.</li>
+                        <li>No campo "Valor Aproximado dos Tributos", selecione a opção "Não informar nenhum valor estimado para os tributos".</li>
+                    </ul>
+                </div>
+                
+                <div class="note-box">
+                    <h4><i class="fas fa-check-circle"></i> Parabéns! Seu acesso está pronto.</h4>
+                    <p>Agora você pode cadastrar os dados da sua atividade econômica e configurar sua empresa para emissão de NFS-e.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emissor Web -->
+    <section id="emissor-web" class="tutorial-section">
+        <div class="container">
+            <div class="tutorial-content">
+                <h2>Como emitir a NFS-e via Emissor Web</h2>
+                
+                <p>No Emissor Web, você pode escolher entre "Emissão Completa" e "Emissão Simplificada". Cada uma tem características específicas e é adequada para diferentes situações.</p>
+                
+                <div class="row" style="display: flex; flex-wrap: wrap; margin: 30px -15px;">
+                    <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                        <div class="step-box">
+                            <h3 style="text-align: center; margin-bottom: 20px;">Emissão Simplificada</h3>
+                            <div class="tutorial-image">
+                                <img src="../images/tela_emissao_simplificada_nfse.png" alt="Tela de Emissão Simplificada NFS-e" style="max-width: 100%;">
+                            </div>
+                            <ul>
+                                <li>Selecione a opção "Emissão Simplificada".</li>
+                                <li>Preencha os dados solicitados.</li>
+                                <li><strong>Importante:</strong> Na Emissão Simplificada, somente é possível utilizar os serviços previamente cadastrados em "Serviços Favoritos".</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                        <div class="step-box">
+                            <h3 style="text-align: center; margin-bottom: 20px;">Emissão Completa</h3>
+                            <div class="tutorial-image">
+                                <img src="../images/tela_emissao_completa_nfse.png" alt="Tela de Emissão Completa NFS-e" style="max-width: 100%;">
+                            </div>
+                            <p>A Emissão Completa é obrigatória para alguns tipos de prestação de serviço (ex: exportação, serviços cujo ISSQN é devido no local do tomador) e permite escolher serviços que não estejam cadastrados como favoritos.</p>
+                            <ul>
+                                <li>Clique no ícone indicado no portal e selecione a opção "Emissão Completa".</li>
+                                <li>Preencha os dados solicitados. O número da inscrição e os dados do CNPJ do MEI já virão pré-preenchidos.</li>
+                                <li>O box "Informar série e número da DPS" é opcional. Se selecionado, o preenchimento das informações será obrigatório.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note-box">
+                    <h4><i class="fas fa-lightbulb"></i> Dica</h4>
+                    <p>Para agilizar o processo de emissão de notas fiscais, recomendamos cadastrar previamente os serviços mais utilizados como "Serviços Favoritos". Isso facilitará tanto a emissão via web quanto via aplicativo mobile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Mobile -->
+    <section id="app-mobile" class="tutorial-section">
+        <div class="container">
+            <div class="tutorial-content">
+                <h2>Como emitir a NFS-e via Aplicativo Mobile</h2>
+                
+                <div class="row" style="display: flex; flex-wrap: wrap; align-items: center;">
+                    <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                        <div class="tutorial-image">
+                            <img src="../images/app_nfse_mobile.jpg" alt="Aplicativo NFS-e Mobile" style="max-width: 300px;">
+                        </div>
+                    </div>
+                    
+                    <div class="col" style="flex: 2; padding: 0 15px; min-width: 300px;">
+                        <div class="step-box">
+                            <h3><span class="step-number">1</span> Baixe o aplicativo</h3>
+                            <p>Faça o download do "NFS-e Mobile" na App Store (iOS) ou Google Play (Android).</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h3><span class="step-number">2</span> Acesse com Login e Senha</h3>
+                            <p>Utilize os dados de cadastro feitos previamente no Emissor Web.</p>
+                            <div class="note-box">
+                                <p><strong>Lembre-se:</strong> É pré-requisito fazer o cadastramento no Emissor Web antes de usar o APP.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h3><span class="step-number">3</span> Emitir NFS-e</h3>
+                            <p>Toque em "Emitir NFS-e" na tela principal do aplicativo.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h3><span class="step-number">4</span> Preencha os dados</h3>
+                            <p>Informe o CPF/CNPJ do cliente (opcional), selecione o serviço prestado (serão exibidos os serviços cadastrados como favoritos no Emissor Web) e informe o valor.</p>
+                        </div>
+                        
+                        <div class="step-box">
+                            <h3><span class="step-number">5</span> Finalize a emissão</h3>
+                            <p>Toque em "Emitir NFS-e" para concluir o processo.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note-box" style="margin-top: 30px;">
+                    <h4><i class="fas fa-hard-hat"></i> NFS-e para Obras</h4>
+                    <p>Se o serviço for relacionado a obras, preencha o campo de informações adicionais com o endereço da obra ou o número do CNO (Cadastro Nacional de Obras) e o município. Depois, toque em "Avançar".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Favoritos -->
+    <section id="servicos-favoritos" class="tutorial-section">
+        <div class="container">
+            <div class="tutorial-content">
+                <h2>Cadastrando Serviços Favoritos</h2>
+                
+                <p>Se você for MEI ou empresa e desejar utilizar o APP ou a Emissão Simplificada, é necessário cadastrar seus Serviços Favoritos. Este procedimento facilita e agiliza a emissão de notas fiscais.</p>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">1</span> Acesse as configurações</h3>
+                    <p>No Emissor Web, acesse a configuração de "Serviços Favoritos" (clicando em qualquer um dos ícones indicados no portal).</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">2</span> Adicione um novo serviço</h3>
+                    <p>Clique em "Novo Serviço Favorito".</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">3</span> Preencha os dados</h3>
+                    <p>Preencha os dados solicitados, incluindo um nome para identificação do serviço. Este será o termo que o ajudará posteriormente a identificar este serviço pré-configurado dentro do Sistema Nacional da NFS-e.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">4</span> Selecione o Código de Tributação Nacional</h3>
+                    <p>O Código de Tributação Nacional é a classificação nacional que permite a identificação dos serviços de forma padronizada para todos os municípios brasileiros.</p>
+                    <div class="note-box">
+                        <p><strong>Importante:</strong> A partir de 2026, todo serviço prestado deverá ser identificado por um código NBS (Nomenclatura Brasileira de Serviços) válido, substituindo os códigos locais usados no ISS.</p>
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">5</span> Salve o serviço favorito</h3>
+                    <p>Após preencher todos os dados, clique em "Novo Serviço Favorito" novamente para salvar.</p>
+                    <p>Você pode cadastrar vários serviços favoritos de acordo com as atividades que sua empresa realiza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas Frequentes -->
+    <section id="faq" class="tutorial-section">
+        <div class="container">
+            <div class="tutorial-content">
+                <h2>Perguntas Frequentes</h2>
+                
+                <div class="step-box">
+                    <h3>Quando o novo sistema de NFS-e se tornará obrigatório?</h3>
+                    <p>A partir de janeiro de 2026, a Nota Fiscal de Serviço Eletrônica (NFS-e) em padrão nacional se tornará obrigatória para todos os municípios brasileiros.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3>O que acontece se o município não aderir ao sistema nacional?</h3>
+                    <p>Os municípios que não aderirem ao sistema nacional poderão sofrer suspensão das transferências voluntárias da União, conforme previsto no § 7º do art. 62 da Lei Complementar nº 214, de 2024.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3>Posso usar o aplicativo mobile sem fazer o cadastro no Emissor Web?</h3>
+                    <p>Não. É pré-requisito fazer o cadastramento no Emissor Web antes de usar o APP NFS-e Mobile.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3>Como cadastrar serviços favoritos?</h3>
+                    <p>No Emissor Web, acesse as configurações, clique em "Serviços Favoritos" e depois em "Novo Serviço Favorito". Preencha os dados solicitados, selecione o Código de Tributação Nacional correspondente e salve.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3>Qual a diferença entre Emissão Simplificada e Emissão Completa?</h3>
+                    <p>Na Emissão Simplificada, somente é possível utilizar os serviços previamente cadastrados como favoritos. Já a Emissão Completa permite escolher qualquer serviço e é obrigatória para alguns tipos de prestação, como exportação e serviços cujo ISSQN é devido no local do tomador.</p>
+                </div>
+                
+                <div class="step-box">
+                    <h3>Onde posso obter mais informações ou suporte?</h3>
+                    <p>Você pode utilizar os seguintes canais de atendimento:</p>
+                    <ul>
+                        <li>E-mail: atendimento.nfs-e@rfb.gov.br</li>
+                        <li>Central de Atendimento Sebrae: 0800 570 0800</li>
+                        <li>Portal Nacional da NFS-e: <a href="https://www.gov.br/nfse" target="_blank">www.gov.br/nfse</a></li>
+                        <li>Entre em contato com a Almeida & Merlin Contabilidade para suporte personalizado.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Box -->
+    <section class="tutorial-section" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="download-box">
+                <h3>Baixe o Tutorial Completo</h3>
+                <p>Tenha acesso ao guia completo sobre o novo sistema de NFS-e, com todas as informações detalhadas e passo a passo para cadastro e emissão.</p>
+                <a href="#" class="download-btn">
+                    <i class="fas fa-file-pdf"></i> Download do PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Precisa de ajuda com o novo sistema de NFS-e?</h2>
+            <p>Nossa equipe está pronta para auxiliar sua empresa na transição para o novo sistema nacional de NFS-e. Entre em contato conosco para uma consultoria personalizada.</p>
+            <a href="../index.html#contato" class="btn" style="background-color: var(--primary-gold); color: var(--primary-dark);">Fale Conosco</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="../images/logo.png" alt="Almeida & Merlin Contabilidade">
+                    </div>
+                    <p>Soluções contábeis personalizadas para o sucesso do seu negócio. Contabilidade, assessoria fiscal e empresarial de excelência.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#sobre">Sobre Nós</a></li>
+                        <li><a href="../index.html#servicos">Serviços</a></li>
+                        <li><a href="../index.html#tutorial">Tutorial NFS-e</a></li>
+                        <li><a href="../index.html#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="../index.html#servicos">Contabilidade Empresarial</a></li>
+                        <li><a href="../index.html#servicos">Assessoria Fiscal e Tributária</a></li>
+                        <li><a href="../index.html#servicos">Departamento Pessoal</a></li>
+                        <li><a href="../index.html#servicos">Consultoria Empresarial</a></li>
+                        <li><a href="../index.html#servicos">Abertura e Legalização</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000, Sala 301, São Paulo - SP</li>
+                        <li><i class="fas fa-phone-alt"></i> (11) 3456-7890</li>
+                        <li><i class="fas fa-envelope"></i> contato@almeidamerlin.com.br</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Almeida & Merlin Contabilidade e Assessoria Empresarial. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navegação do tutorial
+            const tutorialNavItems = document.querySelectorAll('.tutorial-nav-item');
+            
+            // Ativa o item de navegação ao rolar para a seção correspondente
+            window.addEventListener('scroll', function() {
+                let current = '';
+                const sections = document.querySelectorAll('.tutorial-section');
+                const headerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.tutorial-nav').offsetHeight;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - headerHeight - 100;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                tutorialNavItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').substring(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Scroll suave para as seções
+            tutorialNavItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const headerHeight = document.querySelector('.header').offsetHeight + document.querySelector('.tutorial-nav').offsetHeight;
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Botão para download do PDF do tutorial
+            const downloadButtons = document.querySelectorAll('.download-btn');
+            if (downloadButtons.length > 0) {
+                downloadButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Em um site real, isso apontaria para o arquivo PDF real
+                        const pdfUrl = '../tutorial_nfse_final.pdf';
+                        
+                        // Cria um link temporário para download
+                        const link = document.createElement('a');
+                        link.href = pdfUrl;
+                        link.download = 'Tutorial_NFSe_Almeida_Merlin.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

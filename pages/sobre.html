@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | Almeida & Merlin Contabilidade</title>
+    <meta name="description" content="Conheça a Almeida & Merlin Contabilidade e Assessoria Empresarial. Nossa história, valores e equipe de profissionais qualificados.">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .about-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-blue) 100%);
+            color: var(--text-light);
+            padding: 60px 0;
+            margin-top: 80px;
+        }
+        
+        .about-header h1 {
+            color: var(--text-light);
+        }
+        
+        .about-section {
+            padding: 60px 0;
+        }
+        
+        .about-section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background-color: var(--text-light);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-dark);
+            color: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 20px;
+        }
+        
+        .value-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* New Team Section Styles */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        
+        .team-member {
+            background-color: var(--text-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 4px solid var(--primary-gold);
+            box-shadow: 0 0 0 5px rgba(var(--primary-gold-rgb), 0.3);
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        .team-position {
+            color: var(--accent-blue);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        .team-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-bg);
+            border-radius: 50%;
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo_am.png" alt="Almeida & Merlin Contabilidade">
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link active">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="servicos.html" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="tutorial-nfse.html" class="nav-link">Tutorial NFS-e</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link btn-area-cliente">Área do Cliente</a></li>
+                </ul>
+                <button class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5541991751299" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- About Header -->
+    <div class="about-header">
+        <div class="container">
+            <h1>Sobre a Almeida & Merlin</h1>
+            <p>Conheça nossa história, valores e equipe de profissionais qualificados</p>
+        </div>
+    </div>
+
+    <!-- About Section - Nossa História (Simplificada) -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa História</h2>
+            </div>
+            
+            <div class="row" style="display: flex; flex-wrap: wrap; align-items: center; margin: 0 -15px;">
+                <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                    <p>A <strong>Almeida & Merlin Contabilidade e Assessoria Empresarial</strong> foi fundada com a missão de oferecer soluções contábeis e fiscais personalizadas, com foco na excelência e no atendimento próximo ao cliente.</p>
+                    <p>Nossa trajetória é marcada pelo compromisso em auxiliar empresas e pessoas físicas a alcançarem seus objetivos financeiros e fiscais, através de um serviço transparente, ético e eficiente.</p>
+                    <p>Com uma equipe dedicada e expertise nas mais diversas áreas da contabilidade, estamos prontos para ser o seu parceiro estratégico, garantindo segurança e tranquilidade para o seu negócio.</p>
+                </div>
+                
+                <div class="col" style="flex: 1; padding: 0 15px; min-width: 300px;">
+                    <div class="about-image">
+                        <img src="../images/valores_new.png" alt="Almeida & Merlin Valores">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Valores</h2>
+                <p>Princípios que norteiam nossa atuação e relacionamento com os clientes</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Ética</h3>
+                    <p>Atuamos com transparência, honestidade e respeito em todas as nossas relações profissionais.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="value-title">Excelência</h3>
+                    <p>Buscamos constantemente a melhoria contínua e a excelência em todos os serviços prestados.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Relacionamento</h3>
+                    <p>Construímos relacionamentos de longo prazo baseados na confiança e no respeito mútuo.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Inovação</h3>
+                    <p>Investimos em tecnologia e processos inovadores para oferecer soluções eficientes.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="value-title">Conhecimento</h3>
+                    <p>Valorizamos a atualização constante e o compartilhamento de conhecimento.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="value-title">Responsabilidade</h3>
+                    <p>Assumimos compromisso com os resultados e com a satisfação dos nossos clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Fundadores</h2>
+                <p>Conheça os profissionais que idealizaram a Almeida & Merlin</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <!-- Foto removida conforme solicitação -->
+                    </div>
+                    <h3 class="team-name">Marli Almeida</h3>
+                    <p class="team-position">Especialista em Departamento Pessoal</p>
+                    <p class="team-description">Com vasta experiência em gestão de recursos humanos e legislação trabalhista, Marli Almeida é a força motriz por trás da excelência em departamento pessoal da Almeida & Merlin.</p>
+                    <div class="team-social">
+                        <a href="https://wa.me/5541988474967" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:marlialmeidacontabilidade@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo">
+                        <!-- Foto removida conforme solicitação -->
+                    </div>
+                    <h3 class="team-name">Henrique Merlin</h3>
+                    <p class="team-position">Contador e Consultor Tributário</p>
+                    <p class="team-description">Henrique Merlin, contador experiente e consultor tributário, lidera a área fiscal e contábil, garantindo que nossos clientes estejam sempre em conformidade e otimizando suas cargas tributárias.</p>
+                    <div class="team-social">
+                        <a href="https://wa.me/5541992453631" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:henriquemerlincontabilidade@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Pronto para Levar Seu Negócio ao Próximo Nível?</h2>
+            <p>Entre em contato conosco e descubra como podemos ajudar sua empresa a crescer com segurança e eficiência.</p>
+            <a href="contato.html" class="btn btn-primary">Fale Conosco</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="../images/logo_am.png" alt="Almeida & Merlin Contabilidade">
+                    </div>
+                    <p>Soluções contábeis personalizadas para o sucesso do seu negócio. Contabilidade, assessoria fiscal e empresarial de excelência.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/almeidamerlincontabilidade" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5541991751299" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:almeidamerlincontabilidade@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="tutorial-nfse.html">Tutorial NFS-e</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="servico-contabilidade.html">Contabilidade Empresarial</a></li>
+                        <li><a href="servico-fiscal.html">Assessoria Fiscal</a></li>
+                        <li><a href="servico-pessoal.html">Departamento Pessoal</a></li>
+                        <li><a href="servico-consultoria.html">Consultoria Empresarial</a></li>
+                        <li><a href="servico-certificacao.html">Certificação Digital</a></li>
+                        <li><a href="servico-abertura.html">Abertura de Empresas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Anita Garibaldi 1913, Sala 01, Curitiba - PR</li>
+                        <li><i class="fas fa-phone-alt"></i> (41) 99175-1299</li>
+                        <li><i class="fas fa-phone-alt"></i> (41) 3014-5441</li>
+                        <li><i class="fas fa-envelope"></i> almeidamerlincontabilidade@gmail.com</li>
+                        <li><i class="fab fa-instagram"></i> @almeidamerlincontabilidade</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Almeida & Merlin Contabilidade e Assessoria Empresarial. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
